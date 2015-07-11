@@ -3,13 +3,19 @@ meteor-accounts-ui-bootstrap-3
 
 Meteor accounts-ui styled with Twitter's Bootstrap 3, now with multi-language support.
 
+Notes
+------------
+
+This package is similar to ian:accounts-ui-bootstrap-3, but the underlying I18N is handled by TAPi18n.
+
+
 Installation
 ------------
 
 With Meteor >=0.9.0:
 
 ```sh
-$ meteor add ian:accounts-ui-bootstrap-3
+$ meteor add daoli:accounts-ui-bootstrap-3
 ```
 
 [`twbs:bootstrap`](https://atmospherejs.com/twbs/bootstrap) is the recommended Meteor implementation of Twitter's Bootstrap, and is declared as a weak dependency in this package. [`nemo64:bootstrap`](https://atmospherejs.com/nemo64/bootstrap) is also supported. If you're using any other Bootstrap package, you're on your own regarding load order problems.

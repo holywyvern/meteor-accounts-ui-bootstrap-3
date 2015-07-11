@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'daoli:accounts-ui-bootstrap-3',
 	summary: 'Bootstrap-styled accounts-ui with TAPi18n multi-language support.',
-	version: '1.2.71_1',
+	version: '1.2.71_2',
 	git: "https://github.com/daoli/meteor-accounts-ui-bootstrap-3"
 });
 
