@@ -139,7 +139,7 @@
 		if (username.length >= 3) {
 			return true;
 		} else {
-			loginButtonsSession.errorMessage(i18n('errorMessages.usernameTooShort'));
+			loginButtonsSession.errorMessage(__('Username must be at least 3 characters long'));
 			return false;
 		}
 	};
@@ -153,19 +153,19 @@
 		if (re.test(email)) {
 			return true;
 		} else {
-			loginButtonsSession.errorMessage(i18n('errorMessages.invalidEmail'));
+			loginButtonsSession.errorMessage(__('Invalid email'));
 			return false;
 		}
 	};
 	Accounts._loginButtons.validatePassword = function(password, passwordAgain) {
 		if (password.length >= 6) {
 			if (passwordAgain && (password != passwordAgain)) {
-				loginButtonsSession.errorMessage(i18n('errorMessages.passwordsDontMatch'));
+				loginButtonsSession.errorMessage(__("Passwords don't match"));
 				return false;
 			}
 			return true;
 		} else {
-			loginButtonsSession.errorMessage(i18n('errorMessages.passwordTooShort'));
+			loginButtonsSession.errorMessage(__('Password must be at least 6 characters long'));
 			return false;
 		}
 	};
@@ -175,4 +175,3 @@
 	};
 
 })();
-

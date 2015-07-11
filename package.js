@@ -1,9 +1,9 @@
 Package.describe({
-	name: 'ian:accounts-ui-bootstrap-3',
-	summary: 'Bootstrap-styled accounts-ui with multi-language support.',
-	version: '1.2.71',
-	git: "https://github.com/ianmartorell/meteor-accounts-ui-bootstrap-3"
-})
+	name: 'daoli:accounts-ui-bootstrap-3',
+	summary: 'Bootstrap-styled accounts-ui with TAPi18n multi-language support.',
+	version: '1.2.71_1',
+	git: "https://github.com/daoli/meteor-accounts-ui-bootstrap-3"
+});
 
 Package.on_use(function (api) {
 	api.use(['session@1.0.0',
@@ -11,9 +11,10 @@ Package.on_use(function (api) {
 		'stylus@1.0.0',
 		'accounts-base@1.0.0',
 		'underscore@1.0.0',
-		'templating@1.0.0',
-		'anti:i18n@0.4.3'
-		],'client')
+		'templating@1.0.0'
+	],'client');
+
+	api.use(["tap:i18n@1.5.0"], ["client", "server"]);
 
 	api.imply('accounts-base', ['client', 'server']);
 
@@ -27,45 +28,33 @@ Package.on_use(function (api) {
 	// Accounts.oauth.registerService) exists.
 	api.use('accounts-password@1.0.0', {weak: true});
 
+	api.add_files('accountsUIBootstrap3.js', 'client');
+	api.add_files("package-tap.i18n", ["client", "server"]);
+
 	api.add_files([
-		'accounts_ui.js',
-
-		// translations
-		'i18n/en.i18n.js',
-		'i18n/es.i18n.js',
-		'i18n/ca.i18n.js',
-		'i18n/fr.i18n.js',
-		'i18n/de.i18n.js',
-		'i18n/it.i18n.js',
-		'i18n/pt-PT.i18n.js',
-		'i18n/pt-BR.i18n.js',
-		'i18n/pt.i18n.js',
-		'i18n/ru.i18n.js',
-		'i18n/el.i18n.js',
-		'i18n/ko.i18n.js',
-		'i18n/ar.i18n.js',
-		'i18n/pl.i18n.js',
-		'i18n/zh-CN.i18n.js',
-		'i18n/zh-TW.i18n.js',
-		'i18n/zh.i18n.js',
-		'i18n/nl.i18n.js',
-		'i18n/ja.i18n.js',
-		'i18n/he.i18n.js',
-		'i18n.js',
-
 		'login_buttons.html',
 		'login_buttons_single.html',
 		'login_buttons_dropdown.html',
 		'login_buttons_dialogs.html',
+	], 'client');
 
+	api.add_files([
+		'accounts_ui.js',
 		'login_buttons_session.js',
-
 		'login_buttons.js',
 		'login_buttons_single.js',
 		'login_buttons_dropdown.js',
 		'login_buttons_dialogs.js',
 		'accounts_ui.styl'
-		], 'client')
+	], 'client');
 
-	api.export('accountsUIBootstrap3', 'client')
+	api.add_files([
+		// translations
+		'i18n/en.i18n.json',
+		'i18n/de.i18n.json',
+		'i18n/fr.i18n.json',
+		'i18n/zh-CN.i18n.json',
+	], ["client", "server"]);
+
+	api.export('accountsUIBootstrap3', "client");
 })
