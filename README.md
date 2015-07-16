@@ -193,9 +193,9 @@ accountsUIBootstrap3.logoutCallback = function(error) {
 }
 ```
 
-### Forcing lowercase username and/or password
+### Forcing lowercase email, username or password
 
-This will force usernames and passwords to be lowercase on signup and will also allow users to login using uppercase usernames and passwords, as it will convert them to lowercase before checking against the database. Beware however that users who already have an account with uppercase usernames or passwords won't be able to login anymore.
+This will force emails, usernames or passwords to be lowercase on signup and will also allow users to login using uppercase emails, usernames or passwords, as it will convert them to lowercase before checking against the database. Beware however that users who already have an account with uppercase usernames or passwords won't be able to login anymore.
 
 ```javascript
 Accounts.ui.config({
@@ -208,40 +208,6 @@ Accounts.ui.config({
 Note: If you allow your users to login using both username or email, that field will only be converted to lowercase if both `forceEmailLowercase` and `forceUsernameLowercase` are set to true.
 
 ### Localization
-
-The default language is English, but this package also comes with translations to many other languages built in. If you want to change the language run one of the following on the client:
-
-```javascript
-accountsUIBootstrap3.setLanguage('es'); // for Spanish
-accountsUIBootstrap3.setLanguage('ca'); // for Catalan
-accountsUIBootstrap3.setLanguage('fr'); // for French
-accountsUIBootstrap3.setLanguage('de'); // for German
-accountsUIBootstrap3.setLanguage('it'); // for Italian
-accountsUIBootstrap3.setLanguage('pt-PT'); // for Portuguese (Portugal)
-accountsUIBootstrap3.setLanguage('pt-BR'); // for Portuguese (Brazil)
-accountsUIBootstrap3.setLanguage('ru'); // for Russian
-accountsUIBootstrap3.setLanguage('el'); // for Greek
-accountsUIBootstrap3.setLanguage('ko'); // for Korean
-accountsUIBootstrap3.setLanguage('ar'); // for Arabic
-```
-
-If you want to implement your own language, use the `map` function like so:
-
-```javascript
-accountsUIBootstrap3.map('es', {
-    _resetPasswordDialog: {
-      title: 'Restablece tu contraseña',
-      cancel: 'Cancelar',
-      submit: 'Guardar'
-    },
-    _enrollAccountDialog: {
-      title: 'Escribe una contraseña',
-      cancel: 'Cerrar',
-      submit: 'Guardar contraseña'
-    },
-    // ...
-})
-```
 
 You can use the translation files in the `i18n` folder as an example.
 
